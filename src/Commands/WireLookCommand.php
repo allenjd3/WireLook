@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Allenjd3\WireLook\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class WireLookCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'wirelook';
 
     public $description = 'My command';
 
