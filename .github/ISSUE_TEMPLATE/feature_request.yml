@@ -1,0 +1,51 @@
+name: "🚀 Feature Request"
+description: "Suggest a new feature for the package"
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing a new feature! Please fill out the following details to help us understand your request better.
+
+  - type: input
+    id: summary
+    attributes:
+      label: "Feature Summary"
+      description: "Provide a concise description of the feature."
+      placeholder: "E.g., Add support for dark mode."
+
+  - type: textarea
+    id: details
+    attributes:
+      label: "Feature Details"
+      description: "Explain the feature in detail. What problem does it solve? Who will benefit?"
+      placeholder: "Write the detailed explanation here."
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority Level"
+      description: "How important is this feature?"
+      options:
+        - Low
+        - Medium
+        - High
+
+  - type: input
+    id: use_case
+    attributes:
+      label: "Use Case"
+      description: "Provide an example or scenario where this feature would be used."
+      placeholder: "E.g., Improve usability for users with accessibility needs."
+
+  - type: checkboxes
+    id: additional_info
+    attributes:
+      label: "Additional Context"
+      options:
+        - label: "Includes technical implementation details"
+        - label: "Depends on other features"
+        - label: "Community-requested feature"
