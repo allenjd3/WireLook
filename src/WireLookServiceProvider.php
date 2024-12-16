@@ -14,7 +14,7 @@ class WireLookServiceProvider extends PackageServiceProvider
             ->name('wirelook')
             ->hasConfigFile()
             ->hasRoute('web')
-            ->hasViews()
+            ->hasViews('wirelook')
             ->hasMigration('create_wirelook_table')
             ->hasCommand(WireLookCommand::class);
     }
