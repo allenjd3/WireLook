@@ -10,14 +10,10 @@ class WireLookServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
         $package
             ->name('wirelook')
             ->hasConfigFile()
+            ->hasRoute('web')
             ->hasViews()
             ->hasMigration('create_wirelook_table')
             ->hasCommand(WireLookCommand::class);
