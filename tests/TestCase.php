@@ -29,6 +29,8 @@ class TestCase extends Orchestra
     public function getEnvironmentSetUp($app)
     {
         config()->set('database.default', 'testing');
+        config()->set('wirelook.preview_path', __DIR__ . "/stubs/");
+        config()->set('wirelook.preview_namespace', "Allenjd3\\WireLook\\Tests\\stubs\\");
         config()->set('app.key', 'base64:yIAtua5VFaccXs9mbjgjkcxO+UXqPO2IInOxj2nGl9U=');
 
         /*
