@@ -2,7 +2,9 @@
 
 namespace Allenjd3\WireLook\Tests\stubs;
 
-class TestPreview
-{
+use Allenjd3\WireLook\Preview;
 
+class TestPreview extends Preview
+{
+    protected $componentName = 'wirelook::base-component';
 }

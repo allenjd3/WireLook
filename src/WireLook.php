@@ -2,8 +2,6 @@
 
 namespace Allenjd3\WireLook;
 
-use Allenjd3\WireLook\Tests\stubs\TestPreview;
-
 class WireLook {
     public function loadPreviews(): array
     {
