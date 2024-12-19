@@ -2,11 +2,11 @@
 
 namespace Allenjd3\WireLook;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Allenjd3\WireLook\Commands\WireLookCommand;
 use Allenjd3\WireLook\Tests\Components\BaseComponent;
 use Livewire\Livewire;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class WireLookServiceProvider extends PackageServiceProvider
 {

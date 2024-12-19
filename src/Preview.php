@@ -6,11 +6,13 @@ use Illuminate\Support\Facades\Blade;
 
 abstract class Preview
 {
-    public function getComponent() {
+    public function getComponent()
+    {
         return Blade::render('<livewire:is :component="$componentName" />', ['componentName' => $this->getComponentName()]);
     }
 
-    public function getSlug() {
+    public function getSlug()
+    {
         $rules = <<<'RULES'
             :: Any-Latin;
             :: NFD;
@@ -24,7 +26,7 @@ abstract class Preview
         RULES;
 
         return \Transliterator::createFromRules($rules)
-            ->transliterate( $this->getComponentName() );;
+            ->transliterate($this->getComponentName());
     }
 
     public function getComponentName()
