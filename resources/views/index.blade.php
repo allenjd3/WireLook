@@ -1,6 +1,12 @@
 <div>
     @livewireStyles
-        Hello World!
-        @livewire('wirelook::base-component')
+        @foreach($keys as $key)
+            <div>
+                <a href="{{ route('wirelook', ['componentName' => $key]) }}">{{ $key }}</a>
+            </div>
+        @endforeach
+        @if (isset($componentName))
+            @livewire($componentName)
+        @endif
     @livewireScripts
 </div>

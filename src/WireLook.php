@@ -14,7 +14,8 @@ class WireLook {
 
             $preview = config('wirelook.preview_namespace') . $cleanedFileName;
 
-            array_push($previews, new $preview);
+            $previewInstance = new $preview;
+            $previews[$previewInstance->getSlug()] = $previewInstance;
         }
 
         return $previews;
