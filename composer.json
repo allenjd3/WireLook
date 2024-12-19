@@ -40,7 +40,7 @@
     "autoload": {
         "psr-4": {
             "Allenjd3\\WireLook\\": "src/",
-            "Allenjd3\\WireLook\\Database\\Factories\\": "database/factories/",
+            "Allenjd3\\WireLook\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
