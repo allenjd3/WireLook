@@ -16,7 +16,7 @@
         }
     ],
     "suggest": {
-        "livewire/livewire": "If you don't have any livewire components, this package will be very boring...",
+        "livewire/livewire": "If you don't have any livewire components, this package will be very boring..."
     },
     "require": {
         "php": "^8.3",
