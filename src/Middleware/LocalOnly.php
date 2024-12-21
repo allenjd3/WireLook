@@ -5,6 +5,7 @@ namespace Allenjd3\WireLook\Middleware;
 use Closure;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class LocalOnly
 {
@@ -12,7 +13,7 @@ class LocalOnly
         public Application $app,
     ) {}
 
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
         if ($this->app->environment('production')) {
             abort(403, 'This action is not allowed in production');

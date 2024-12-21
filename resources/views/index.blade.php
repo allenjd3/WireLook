@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    @if (! app()->environment('testing'))
+        @vite(config('wirelook.stylesheet_paths'))
+    @endif
 </head>
 <body>
 <div>
