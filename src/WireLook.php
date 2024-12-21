@@ -6,7 +6,7 @@ class WireLook
 {
     /**
      * @return array<string, \Allenjd3\WireLook\Preview>
-    */
+     */
     public function loadPreviews(): array
     {
         $previews = [];
