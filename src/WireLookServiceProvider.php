@@ -10,7 +10,7 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class WireLookServiceProvider extends PackageServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         parent::boot();
 

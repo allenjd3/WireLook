@@ -4,10 +4,11 @@ namespace Allenjd3\WireLook\Controllers;
 
 use Allenjd3\WireLook\WireLook;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class WireLookController
 {
-    public function __invoke(Request $request, WireLook $wireLook)
+    public function __invoke(Request $request, WireLook $wireLook): View
     {
         $previews = $wireLook->loadPreviews();
         $includes = ['keys' => array_keys($previews)];

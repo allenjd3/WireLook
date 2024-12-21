@@ -3,15 +3,18 @@
 namespace Allenjd3\WireLook;
 
 use Illuminate\Support\Facades\Blade;
+use Transliterator;
 
 abstract class Preview
 {
-    public function getComponent()
+    public string $componentName;
+
+    public function getComponent(): string
     {
         return Blade::render('<livewire:is :component="$componentName" />', ['componentName' => $this->getComponentName()]);
     }
 
-    public function getSlug()
+    public function getSlug(): string
     {
         $rules = <<<'RULES'
             :: Any-Latin;
@@ -25,11 +28,14 @@ abstract class Preview
             [-[:Separator:]]+ > '-';
         RULES;
 
-        return \Transliterator::createFromRules($rules)
-            ->transliterate($this->getComponentName());
+        if ($transliterator = Transliterator::createFromRules($rules)) {
+            return $transliterator->transliterate($this->getComponentName()) ?: $this->getComponentName();
+        }
+
+        return $this->getComponentName();
     }
 
-    public function getComponentName()
+    public function getComponentName(): string
     {
         return $this->componentName;
     }

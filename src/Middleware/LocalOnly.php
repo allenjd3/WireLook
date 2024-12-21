@@ -12,7 +12,7 @@ class LocalOnly
         public Application $app,
     ) {}
 
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): Closure
     {
         if ($this->app->environment('production')) {
             abort(403, 'This action is not allowed in production');
