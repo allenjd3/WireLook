@@ -6,14 +6,6 @@
 
 This creates a livewire quickview and documentation center for development.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/WireLook.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/WireLook)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
-
 ## Installation
 
 You can install the package via composer:
@@ -39,6 +31,9 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'preview_path' => env('WIRELOOK_PREVIEW_PATH', app_path('Previews').'/'),
+    'preview_namespace' => env('WIRELOOK_PREVIEW_NAMESPACE', 'App\\Previews\\'),
+    'stylesheet_paths' => ['resources/css/app.css'],
 ];
 ```
 
@@ -50,9 +45,20 @@ php artisan vendor:publish --tag="wirelook-views"
 
 ## Usage
 
+Create a new preview in `App\\Previews\\`
+
+It should look like the following.
+
 ```php
-$wireLook = new Allenjd3\WireLook();
-echo $wireLook->echoPhrase('Hello, Allenjd3!');
+<?php
+
+namespace App\Previews;
+
+use Allenjd3\WireLook\Preview;
+
+class ExamplePreview extends Preview {
+    public string $componentName = 'example';
+}
 ```
 
 ## Testing
