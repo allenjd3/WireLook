@@ -7,6 +7,7 @@
     @if (! app()->environment('testing'))
         @vite(config('wirelook.stylesheet_paths'))
     @endif
+    <style>{{ \Allenjd3\Wirelook\Wirelook::css() }}"</style>
 </head>
 <body>
 <div>
@@ -16,9 +17,11 @@
                 <a href="{{ route('wirelook', ['component' => $key]) }}">{{ $key }}</a>
             </div>
         @endforeach
-        @if (isset($componentName))
-            @livewire($componentName)
-        @endif
+        <div class="border-red">
+            @if (isset($componentName))
+                @livewire($componentName)
+            @endif
+        </div>
     @livewireScripts
 </div>
 </body>
