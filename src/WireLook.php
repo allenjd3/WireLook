@@ -31,4 +31,16 @@ class WireLook
 
         return $previews;
     }
+
+    public static function css()
+    {
+        $styles = '';
+        if ($cssPaths = glob(__DIR__ . '/../dist/assets/wirelook-*.css')) {
+            foreach($cssPaths as $path) {
+                $styles .=  file_get_contents($path);
+            }
+        }
+
+        return $styles;
+    }
 }
