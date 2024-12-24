@@ -35,9 +35,9 @@ class WireLook
     public static function css()
     {
         $styles = '';
-        if ($cssPaths = glob(__DIR__ . '/../dist/assets/wirelook-*.css')) {
-            foreach($cssPaths as $path) {
-                $styles .=  file_get_contents($path);
+        if ($cssPaths = glob(__DIR__.'/../dist/assets/wirelook-*.css')) {
+            foreach ($cssPaths as $path) {
+                $styles .= file_get_contents($path);
             }
         }
 
