@@ -35,7 +35,7 @@
             <main>
                 <div class="card">
                     @if (isset($componentName))
-                        @livewire($componentName)
+                        @livewire($componentName, $props)
                     @endif
                 </div>
             </main>

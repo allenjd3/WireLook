@@ -13,7 +13,11 @@ class WireLookController
         $previews = $wireLook->loadPreviews();
         $includes = ['keys' => array_keys($previews)];
         if ($request->has('component')) {
-            $includes = [...$includes, 'componentName' => ($previews[$request->input('component')])->getComponentName()];
+            $includes = [
+                ...$includes,
+                'componentName' => ($previews[$request->input('component')])->getComponentName(),
+                'props' => ($previews[$request->input('component')])->getParams('default'),
+            ];
         }
 
         return view('wirelook::index', $includes);

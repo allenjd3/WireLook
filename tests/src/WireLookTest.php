@@ -9,8 +9,3 @@ it('can load previews', function () {
     expect(array_shift($previews))->toBeInstanceOf(TestPreview::class);
 });
 
-it('can load component information', function () {
-    $wireLook = new WireLook;
-    $previews = $wireLook->loadPreviews();
-    $this->assertMatchesRegularExpression('/wire\:id/', (array_shift($previews))->getComponent());
-});

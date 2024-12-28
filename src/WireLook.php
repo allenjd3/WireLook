@@ -32,7 +32,7 @@ class WireLook
         return $previews;
     }
 
-    public static function css()
+    public static function css(): string
     {
         $styles = '';
         if ($cssPaths = glob(__DIR__.'/../dist/assets/wirelook-*.css')) {
