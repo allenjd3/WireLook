@@ -2,7 +2,6 @@
 
 namespace Allenjd3\WireLook;
 
-use Illuminate\Support\Facades\Blade;
 use Transliterator;
 
 abstract class Preview
@@ -51,7 +50,7 @@ abstract class Preview
      */
     public function getParams(string $variantName): array
     {
-        $methodName = 'variant'. ucfirst($variantName);
+        $methodName = 'variant'.ucfirst($variantName);
 
         if (! method_exists($this, $methodName)) {
             return [];
