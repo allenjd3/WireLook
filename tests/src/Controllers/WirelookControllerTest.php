@@ -14,6 +14,7 @@ it('aborts if app is in production', function () {
 
 it('shows the component', function () {
     $response = $this->get('wirelook?component=wirelookbase-component');
+    $response->assertOk();
     $matches = [];
     preg_match('/wirelook\:\:base\-component/', $response->getContent(), $matches);
     $this->assertCount(1, $matches);

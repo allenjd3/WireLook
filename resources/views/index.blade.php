@@ -18,15 +18,16 @@
         <div class="dashboard">
             <aside>
                 <ul>
-                    @foreach($keys as $key)
+                    @foreach($components as $component)
                     <li>
                         <a
-                            href="{{ route('wirelook', ['component' => $key]) }}"
-                            @class(["component__link", "component__link--active" => request()->get('component') === $key])
-                        >{{ $key }}</a>
+                            href="{{ route('wirelook', ['component' => $component['slug']]) }}"
+                            @class(["component__link", "component__link--active" => request()->get('component') === $component['slug']])
+                        >{{ $component['slug'] }}</a>
                         <ul>
-                            <li><a href="#" class="component__sublink">Default</a></li>
-                            <li><a href="#" class="component__sublink">Blue</a></li>
+                            @foreach($component['variants'] as $variant)
+                                <li><a href="{{ route('wirelook', ['component' => $component['slug'], 'variant' => $variant]) }}" class="component__sublink">{{ ucfirst($variant) }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     @endforeach
