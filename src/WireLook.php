@@ -5,7 +5,7 @@ namespace Allenjd3\WireLook;
 class WireLook
 {
     /**
-     * @return array<string, \Allenjd3\WireLook\Preview>
+     * @return array<int, \Allenjd3\WireLook\Preview>
      */
     public function loadPreviews(): array
     {
@@ -25,7 +25,7 @@ class WireLook
 
                 $previewInstance = new $preview;
                 assert($previewInstance instanceof Preview);
-                $previews[$previewInstance->getSlug()] = $previewInstance;
+                $previews[] = $previewInstance;
             }
         }
 

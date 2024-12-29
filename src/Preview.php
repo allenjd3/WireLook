@@ -57,11 +57,7 @@ abstract class Preview
             return [];
         }
 
-        $result = $this->$methodName();
-        assert(is_array($result));
-
-        /** @var array<string, string> */
-        return $result;
+        return $this->$methodName();
     }
 
     private function extractVariantName(string $name): string
