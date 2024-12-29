@@ -36,12 +36,13 @@ class WireLookController
 
     /**
      * @return array<int, array<'slug'|'variants', string|array<int, string>>>
-    */
+     */
     private function generateComponentTree(): array
     {
         $previews = $this->previews;
+
         return array_map(
-            function(Preview $preview) {
+            function (Preview $preview) {
                 return ['slug' => $preview->getSlug(), 'variants' => $preview->getVariants()];
             },
             $previews,
@@ -53,6 +54,7 @@ class WireLookController
         $previews = $this->previews;
 
         $filteredPreviews = array_filter($previews, fn (Preview $preview) => $preview->getSlug() === $componentName);
+
         return array_shift($filteredPreviews);
     }
 }
