@@ -8,6 +8,14 @@ abstract class Preview
 {
     public string $componentName;
 
+    /**
+     * @return array<string, mixed>|array{}
+     */
+    public function variantDefault(): array
+    {
+        return [];
+    }
+
     public function getSlug(): string
     {
         $rules = <<<'RULES'
@@ -56,11 +64,7 @@ abstract class Preview
             return [];
         }
 
-        $result = $this->$methodName();
-        assert(is_array($result));
-
-        /** @var array<string, string> */
-        return $result;
+        return $this->$methodName();
     }
 
     private function extractVariantName(string $name): string
