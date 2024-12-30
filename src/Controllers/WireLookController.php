@@ -22,7 +22,7 @@ class WireLookController
         $this->previews = $wireLook->loadPreviews();
         $includes = ['components' => $this->generateComponentTree()];
 
-        if ($preview = $this->searchPreviews($validated['component'])) {
+        if ($preview = $this->searchPreviews($validated['component'] ?? 'poop')) {
 
             $includes = [
                 ...$includes,
