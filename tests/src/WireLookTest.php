@@ -8,4 +8,3 @@ it('can load previews', function () {
     $previews = $wireLook->loadPreviews();
     expect(array_shift($previews))->toBeInstanceOf(TestPreview::class);
 });
-
